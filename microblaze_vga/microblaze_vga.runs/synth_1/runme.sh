@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.runs/synth_1'
+HD_PWD='C:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

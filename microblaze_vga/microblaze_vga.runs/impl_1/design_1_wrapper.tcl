@@ -44,6 +44,9 @@ proc step_failed { step } {
 
 set_msg_config -id {HDL 9-1061} -limit 100000
 set_msg_config -id {HDL 9-1654} -limit 100000
+set_msg_config -id {HDL-1065} -limit 10000
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 
 start_step init_design
 set ACTIVE_STEP init_design
@@ -53,71 +56,73 @@ set rc [catch {
   set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir C:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.cache/wt [current_project]
-  set_property parent.project_path C:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.xpr [current_project]
+  set_property webtalk.parent_dir C:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.cache/wt [current_project]
+  set_property parent.project_path C:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.xpr [current_project]
   set_property ip_repo_paths {
-  C:/Users/khem_/Desktop/DIG_DESIGN_LAB/ip_repo/axi4_vga_1.0
-  C:/Users/khem_/Desktop/DIG_DESIGN_LAB/ip_repo/axi4_vga_1.0
-  C:/Users/khem_/Desktop/DIG_DESIGN_LAB/ip_repo/axi4_vga_1.0
+  C:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/ip_repo/axi4_vga_1.0
+  C:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/ip_repo/axi4_vga_1.0
+  C:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/ip_repo/axi4_vga_1.0
 } [current_project]
-  set_property ip_output_repo C:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.cache/ip [current_project]
+  set_property ip_output_repo C:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
-  add_files -quiet C:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.runs/synth_1/design_1_wrapper.dcp
-  add_files -quiet C:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.dcp
-  set_property netlist_only true [get_files C:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.dcp]
-  add_files -quiet C:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/design_1_microblaze_0_0.dcp
-  set_property netlist_only true [get_files C:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/design_1_microblaze_0_0.dcp]
-  add_files -quiet c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_dlmb_v10_0/design_1_dlmb_v10_0.dcp
-  set_property netlist_only true [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_dlmb_v10_0/design_1_dlmb_v10_0.dcp]
-  add_files -quiet c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_ilmb_v10_0/design_1_ilmb_v10_0.dcp
-  set_property netlist_only true [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_ilmb_v10_0/design_1_ilmb_v10_0.dcp]
-  add_files -quiet c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_dlmb_bram_if_cntlr_0/design_1_dlmb_bram_if_cntlr_0.dcp
-  set_property netlist_only true [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_dlmb_bram_if_cntlr_0/design_1_dlmb_bram_if_cntlr_0.dcp]
-  add_files -quiet c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_ilmb_bram_if_cntlr_0/design_1_ilmb_bram_if_cntlr_0.dcp
-  set_property netlist_only true [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_ilmb_bram_if_cntlr_0/design_1_ilmb_bram_if_cntlr_0.dcp]
-  add_files -quiet c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_lmb_bram_0/design_1_lmb_bram_0.dcp
-  set_property netlist_only true [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_lmb_bram_0/design_1_lmb_bram_0.dcp]
-  add_files -quiet c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_mdm_1_0/design_1_mdm_1_0.dcp
-  set_property netlist_only true [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_mdm_1_0/design_1_mdm_1_0.dcp]
-  add_files -quiet c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_0_100M_0/design_1_rst_clk_wiz_0_100M_0.dcp
-  set_property netlist_only true [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_0_100M_0/design_1_rst_clk_wiz_0_100M_0.dcp]
-  add_files -quiet c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_axi_uartlite_0_0/design_1_axi_uartlite_0_0.dcp
-  set_property netlist_only true [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_axi_uartlite_0_0/design_1_axi_uartlite_0_0.dcp]
-  add_files -quiet c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_axi_bram_ctrl_0_0/design_1_axi_bram_ctrl_0_0.dcp
-  set_property netlist_only true [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_axi_bram_ctrl_0_0/design_1_axi_bram_ctrl_0_0.dcp]
-  add_files -quiet c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0.dcp
-  set_property netlist_only true [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0.dcp]
-  add_files -quiet c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_axi_bram_ctrl_0_bram_0/design_1_axi_bram_ctrl_0_bram_0.dcp
-  set_property netlist_only true [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_axi_bram_ctrl_0_bram_0/design_1_axi_bram_ctrl_0_bram_0.dcp]
-  add_files -quiet c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0.dcp
-  set_property netlist_only true [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0.dcp]
-  add_files C:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/design_1.bmm
-  set_property SCOPED_TO_REF design_1 [get_files -all C:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/design_1.bmm]
-  add_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/data/mb_bootloop_le.elf
-  set_property SCOPED_TO_REF design_1 [get_files -all c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/data/mb_bootloop_le.elf]
-  set_property SCOPED_TO_CELLS microblaze_0 [get_files -all c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/data/mb_bootloop_le.elf]
-  read_xdc -prop_thru_buffers -ref design_1_clk_wiz_0_0 -cells inst c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_board.xdc
-  set_property processing_order EARLY [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_board.xdc]
-  read_xdc -ref design_1_clk_wiz_0_0 -cells inst c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.xdc
-  set_property processing_order EARLY [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.xdc]
-  read_xdc -ref design_1_microblaze_0_0 -cells U0 c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/design_1_microblaze_0_0.xdc
-  set_property processing_order EARLY [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/design_1_microblaze_0_0.xdc]
-  read_xdc -ref design_1_dlmb_v10_0 -cells U0 c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_dlmb_v10_0/design_1_dlmb_v10_0.xdc
-  set_property processing_order EARLY [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_dlmb_v10_0/design_1_dlmb_v10_0.xdc]
-  read_xdc -ref design_1_ilmb_v10_0 -cells U0 c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_ilmb_v10_0/design_1_ilmb_v10_0.xdc
-  set_property processing_order EARLY [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_ilmb_v10_0/design_1_ilmb_v10_0.xdc]
-  read_xdc -ref design_1_mdm_1_0 -cells U0 c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_mdm_1_0/design_1_mdm_1_0.xdc
-  set_property processing_order EARLY [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_mdm_1_0/design_1_mdm_1_0.xdc]
-  read_xdc -prop_thru_buffers -ref design_1_rst_clk_wiz_0_100M_0 -cells U0 c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_0_100M_0/design_1_rst_clk_wiz_0_100M_0_board.xdc
-  set_property processing_order EARLY [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_0_100M_0/design_1_rst_clk_wiz_0_100M_0_board.xdc]
-  read_xdc -ref design_1_rst_clk_wiz_0_100M_0 -cells U0 c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_0_100M_0/design_1_rst_clk_wiz_0_100M_0.xdc
-  set_property processing_order EARLY [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_0_100M_0/design_1_rst_clk_wiz_0_100M_0.xdc]
-  read_xdc -prop_thru_buffers -ref design_1_axi_uartlite_0_0 -cells U0 c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_axi_uartlite_0_0/design_1_axi_uartlite_0_0_board.xdc
-  set_property processing_order EARLY [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_axi_uartlite_0_0/design_1_axi_uartlite_0_0_board.xdc]
-  read_xdc -ref design_1_axi_uartlite_0_0 -cells U0 c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_axi_uartlite_0_0/design_1_axi_uartlite_0_0.xdc
-  set_property processing_order EARLY [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_axi_uartlite_0_0/design_1_axi_uartlite_0_0.xdc]
-  read_xdc C:/Users/khem_/Desktop/DIG_DESIGN_LAB/microblaze_vga/microblaze_vga.srcs/constrs_1/new/pins.xdc
+  add_files -quiet C:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.runs/synth_1/design_1_wrapper.dcp
+  add_files -quiet c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.dcp
+  set_property netlist_only true [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.dcp]
+  add_files -quiet c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/design_1_microblaze_0_0.dcp
+  set_property netlist_only true [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/design_1_microblaze_0_0.dcp]
+  add_files -quiet c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_dlmb_v10_0/design_1_dlmb_v10_0.dcp
+  set_property netlist_only true [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_dlmb_v10_0/design_1_dlmb_v10_0.dcp]
+  add_files -quiet c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_ilmb_v10_0/design_1_ilmb_v10_0.dcp
+  set_property netlist_only true [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_ilmb_v10_0/design_1_ilmb_v10_0.dcp]
+  add_files -quiet c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_dlmb_bram_if_cntlr_0/design_1_dlmb_bram_if_cntlr_0.dcp
+  set_property netlist_only true [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_dlmb_bram_if_cntlr_0/design_1_dlmb_bram_if_cntlr_0.dcp]
+  add_files -quiet c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_ilmb_bram_if_cntlr_0/design_1_ilmb_bram_if_cntlr_0.dcp
+  set_property netlist_only true [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_ilmb_bram_if_cntlr_0/design_1_ilmb_bram_if_cntlr_0.dcp]
+  add_files -quiet c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_lmb_bram_0/design_1_lmb_bram_0.dcp
+  set_property netlist_only true [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_lmb_bram_0/design_1_lmb_bram_0.dcp]
+  add_files -quiet c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_mdm_1_0/design_1_mdm_1_0.dcp
+  set_property netlist_only true [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_mdm_1_0/design_1_mdm_1_0.dcp]
+  add_files -quiet c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_0_100M_0/design_1_rst_clk_wiz_0_100M_0.dcp
+  set_property netlist_only true [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_0_100M_0/design_1_rst_clk_wiz_0_100M_0.dcp]
+  add_files -quiet c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_axi_uartlite_0_0/design_1_axi_uartlite_0_0.dcp
+  set_property netlist_only true [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_axi_uartlite_0_0/design_1_axi_uartlite_0_0.dcp]
+  add_files -quiet c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_axi_bram_ctrl_0_0/design_1_axi_bram_ctrl_0_0.dcp
+  set_property netlist_only true [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_axi_bram_ctrl_0_0/design_1_axi_bram_ctrl_0_0.dcp]
+  add_files -quiet c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0.dcp
+  set_property netlist_only true [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0.dcp]
+  add_files -quiet c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_axi_bram_ctrl_0_bram_0/design_1_axi_bram_ctrl_0_bram_0.dcp
+  set_property netlist_only true [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_axi_bram_ctrl_0_bram_0/design_1_axi_bram_ctrl_0_bram_0.dcp]
+  add_files -quiet c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_axi4_vga_0_0/design_1_axi4_vga_0_0.dcp
+  set_property netlist_only true [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_axi4_vga_0_0/design_1_axi4_vga_0_0.dcp]
+  add_files -quiet c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0.dcp
+  set_property netlist_only true [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0.dcp]
+  add_files C:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/design_1.bmm
+  set_property SCOPED_TO_REF design_1 [get_files -all C:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/design_1.bmm]
+  add_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/data/mb_bootloop_le.elf
+  set_property SCOPED_TO_REF design_1 [get_files -all c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/data/mb_bootloop_le.elf]
+  set_property SCOPED_TO_CELLS microblaze_0 [get_files -all c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/data/mb_bootloop_le.elf]
+  read_xdc -prop_thru_buffers -ref design_1_clk_wiz_0_0 -cells inst c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_board.xdc
+  set_property processing_order EARLY [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_board.xdc]
+  read_xdc -ref design_1_clk_wiz_0_0 -cells inst c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.xdc
+  set_property processing_order EARLY [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.xdc]
+  read_xdc -ref design_1_microblaze_0_0 -cells U0 c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/design_1_microblaze_0_0.xdc
+  set_property processing_order EARLY [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/design_1_microblaze_0_0.xdc]
+  read_xdc -ref design_1_dlmb_v10_0 -cells U0 c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_dlmb_v10_0/design_1_dlmb_v10_0.xdc
+  set_property processing_order EARLY [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_dlmb_v10_0/design_1_dlmb_v10_0.xdc]
+  read_xdc -ref design_1_ilmb_v10_0 -cells U0 c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_ilmb_v10_0/design_1_ilmb_v10_0.xdc
+  set_property processing_order EARLY [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_ilmb_v10_0/design_1_ilmb_v10_0.xdc]
+  read_xdc -ref design_1_mdm_1_0 -cells U0 c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_mdm_1_0/design_1_mdm_1_0.xdc
+  set_property processing_order EARLY [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_mdm_1_0/design_1_mdm_1_0.xdc]
+  read_xdc -prop_thru_buffers -ref design_1_rst_clk_wiz_0_100M_0 -cells U0 c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_0_100M_0/design_1_rst_clk_wiz_0_100M_0_board.xdc
+  set_property processing_order EARLY [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_0_100M_0/design_1_rst_clk_wiz_0_100M_0_board.xdc]
+  read_xdc -ref design_1_rst_clk_wiz_0_100M_0 -cells U0 c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_0_100M_0/design_1_rst_clk_wiz_0_100M_0.xdc
+  set_property processing_order EARLY [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_0_100M_0/design_1_rst_clk_wiz_0_100M_0.xdc]
+  read_xdc -prop_thru_buffers -ref design_1_axi_uartlite_0_0 -cells U0 c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_axi_uartlite_0_0/design_1_axi_uartlite_0_0_board.xdc
+  set_property processing_order EARLY [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_axi_uartlite_0_0/design_1_axi_uartlite_0_0_board.xdc]
+  read_xdc -ref design_1_axi_uartlite_0_0 -cells U0 c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_axi_uartlite_0_0/design_1_axi_uartlite_0_0.xdc
+  set_property processing_order EARLY [get_files c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_axi_uartlite_0_0/design_1_axi_uartlite_0_0.xdc]
+  read_xdc C:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/constrs_1/new/pins.xdc
   link_design -top design_1_wrapper -part xc7a35tcpg236-1
   write_hwdef -file design_1_wrapper.hwdef
   close_msg_db -file init_design.pb
@@ -134,7 +139,7 @@ start_step opt_design
 set ACTIVE_STEP opt_design
 set rc [catch {
   create_msg_db opt_design.pb
-  opt_design 
+  opt_design -directive Explore
   write_checkpoint -force design_1_wrapper_opt.dcp
   catch { report_drc -file design_1_wrapper_drc_opted.rpt }
   close_msg_db -file opt_design.pb

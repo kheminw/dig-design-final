@@ -3,8 +3,8 @@ proc init_gui { IPINST } {
   ipgui::add_param $IPINST -name "Component_Name"
   #Adding Page
   set Page_0 [ipgui::add_page $IPINST -name "Page 0"]
-  set C_VIDEO_S00_AXIS_TDATA_WIDTH [ipgui::add_param $IPINST -name "C_VIDEO_S00_AXIS_TDATA_WIDTH" -parent ${Page_0} -widget comboBox]
-  set_property tooltip {AXI4Stream sink: Data Width} ${C_VIDEO_S00_AXIS_TDATA_WIDTH}
+  set C_VIDEO_S00_AXIS_TDATA_WIDTH [ipgui::add_param $IPINST -name "C_VIDEO_S00_AXIS_TDATA_WIDTH" -parent ${Page_0}]
+  set_property tooltip {Specify Data Width (only the first 12 MSBs will be used)} ${C_VIDEO_S00_AXIS_TDATA_WIDTH}
 
 
 }
