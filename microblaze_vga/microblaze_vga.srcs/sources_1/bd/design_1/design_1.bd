@@ -251,10 +251,20 @@
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
+        <spirit:instanceName>xlslice_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="xlslice" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_xlslice_0_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="DOUT_WIDTH">12</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="DIN_TO">20</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="DIN_FROM">31</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
         <spirit:instanceName>axi4_vga_0</spirit:instanceName>
         <spirit:componentRef spirit:library="user" spirit:name="axi4_vga" spirit:vendor="xilinx.com" spirit:version="1.0"/>
         <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_axi4_vga_0_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_axi4_vga_0_1</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
     </spirit:componentInstances>
@@ -298,11 +308,6 @@
         <spirit:name>axi_bram_ctrl_0_BRAM_PORTB</spirit:name>
         <spirit:activeInterface spirit:busRef="BRAM_PORTB" spirit:componentRef="axi_bram_ctrl_0_bram"/>
         <spirit:activeInterface spirit:busRef="BRAM_PORTB" spirit:componentRef="axi_bram_ctrl_0"/>
-      </spirit:interconnection>
-      <spirit:interconnection>
-        <spirit:name>microblaze_0_M0_AXIS</spirit:name>
-        <spirit:activeInterface spirit:busRef="M0_AXIS" spirit:componentRef="microblaze_0"/>
-        <spirit:activeInterface spirit:busRef="VIDEO_S00_AXIS" spirit:componentRef="axi4_vga_0"/>
       </spirit:interconnection>
     </spirit:interconnections>
     <spirit:adHocConnections>
@@ -380,6 +385,31 @@
         <spirit:name>axi4_vga_0_hsync</spirit:name>
         <spirit:internalPortReference spirit:componentRef="axi4_vga_0" spirit:portRef="hsync"/>
         <spirit:externalPortReference spirit:portRef="hsync"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>microblaze_0_M0_AXIS_TDATA</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="microblaze_0" spirit:portRef="M0_AXIS_TDATA"/>
+        <spirit:internalPortReference spirit:componentRef="xlslice_0" spirit:portRef="Din"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>xlslice_0_Dout</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="xlslice_0" spirit:portRef="Dout"/>
+        <spirit:internalPortReference spirit:componentRef="axi4_vga_0" spirit:portRef="video_s00_axis_tdata"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>microblaze_0_M0_AXIS_TLAST</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="microblaze_0" spirit:portRef="M0_AXIS_TLAST"/>
+        <spirit:internalPortReference spirit:componentRef="axi4_vga_0" spirit:portRef="video_s00_axis_tlast"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>axi4_vga_0_video_s00_axis_tready</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="axi4_vga_0" spirit:portRef="video_s00_axis_tready"/>
+        <spirit:internalPortReference spirit:componentRef="microblaze_0" spirit:portRef="M0_AXIS_TREADY"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>microblaze_0_M0_AXIS_TVALID</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="microblaze_0" spirit:portRef="M0_AXIS_TVALID"/>
+        <spirit:internalPortReference spirit:componentRef="axi4_vga_0" spirit:portRef="video_s00_axis_tvalid"/>
       </spirit:adHocConnection>
     </spirit:adHocConnections>
     <spirit:hierConnections>

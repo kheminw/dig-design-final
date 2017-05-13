@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="vga_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="vga_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="166666666fs"></ZoomStartTime>
+      <ZoomEndTime time="1166666667fs"></ZoomEndTime>
+      <Cursor1Time time="1000000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="175"></NameColumnWidth>
+      <ValueColumnWidth column_width="144"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="42" />
+   <wvobject fp_name="/vga_tb/vsync" type="logic">
+      <obj_property name="ElementShortName">vsync</obj_property>
+      <obj_property name="ObjectShortName">vsync</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga_tb/hsync" type="logic">
+      <obj_property name="ElementShortName">hsync</obj_property>
+      <obj_property name="ObjectShortName">hsync</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga_tb/rgb_out" type="array">
+      <obj_property name="ElementShortName">rgb_out[11:0]</obj_property>
+      <obj_property name="ObjectShortName">rgb_out[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga_tb/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga_tb/ready" type="logic">
+      <obj_property name="ElementShortName">ready</obj_property>
+      <obj_property name="ObjectShortName">ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga_tb/data" type="array">
+      <obj_property name="ElementShortName">data[11:0]</obj_property>
+      <obj_property name="ObjectShortName">data[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga_tb/last" type="logic">
+      <obj_property name="ElementShortName">last</obj_property>
+      <obj_property name="ObjectShortName">last</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga_tb/valid" type="logic">
+      <obj_property name="ElementShortName">valid</obj_property>
+      <obj_property name="ObjectShortName">valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga_tb/v1/vga_inst/vga_sync_unit/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga_tb/v1/vga_inst/vga_sync_unit/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga_tb/v1/vga_inst/vga_sync_unit/hsync" type="logic">
+      <obj_property name="ElementShortName">hsync</obj_property>
+      <obj_property name="ObjectShortName">hsync</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga_tb/v1/vga_inst/vga_sync_unit/vsync" type="logic">
+      <obj_property name="ElementShortName">vsync</obj_property>
+      <obj_property name="ObjectShortName">vsync</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga_tb/v1/vga_inst/vga_sync_unit/video_on" type="logic">
+      <obj_property name="ElementShortName">video_on</obj_property>
+      <obj_property name="ObjectShortName">video_on</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga_tb/v1/vga_inst/vga_sync_unit/p_tick" type="logic">
+      <obj_property name="ElementShortName">p_tick</obj_property>
+      <obj_property name="ObjectShortName">p_tick</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga_tb/v1/vga_inst/vga_sync_unit/x" type="array">
+      <obj_property name="ElementShortName">x[9:0]</obj_property>
+      <obj_property name="ObjectShortName">x[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga_tb/v1/vga_inst/vga_sync_unit/y" type="array">
+      <obj_property name="ElementShortName">y[9:0]</obj_property>
+      <obj_property name="ObjectShortName">y[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga_tb/v1/vga_inst/vga_sync_unit/pixel_reg" type="array">
+      <obj_property name="ElementShortName">pixel_reg[1:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_reg[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga_tb/v1/vga_inst/vga_sync_unit/pixel_next" type="array">
+      <obj_property name="ElementShortName">pixel_next[1:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_next[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga_tb/v1/vga_inst/vga_sync_unit/pixel_tick" type="logic">
+      <obj_property name="ElementShortName">pixel_tick</obj_property>
+      <obj_property name="ObjectShortName">pixel_tick</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga_tb/v1/vga_inst/vga_sync_unit/h_count_reg" type="array">
+      <obj_property name="ElementShortName">h_count_reg[9:0]</obj_property>
+      <obj_property name="ObjectShortName">h_count_reg[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga_tb/v1/vga_inst/vga_sync_unit/h_count_next" type="array">
+      <obj_property name="ElementShortName">h_count_next[9:0]</obj_property>
+      <obj_property name="ObjectShortName">h_count_next[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga_tb/v1/vga_inst/vga_sync_unit/v_count_reg" type="array">
+      <obj_property name="ElementShortName">v_count_reg[9:0]</obj_property>
+      <obj_property name="ObjectShortName">v_count_reg[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga_tb/v1/vga_inst/vga_sync_unit/v_count_next" type="array">
+      <obj_property name="ElementShortName">v_count_next[9:0]</obj_property>
+      <obj_property name="ObjectShortName">v_count_next[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga_tb/v1/vga_inst/vga_sync_unit/vsync_reg" type="logic">
+      <obj_property name="ElementShortName">vsync_reg</obj_property>
+      <obj_property name="ObjectShortName">vsync_reg</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga_tb/v1/vga_inst/vga_sync_unit/hsync_reg" type="logic">
+      <obj_property name="ElementShortName">hsync_reg</obj_property>
+      <obj_property name="ObjectShortName">hsync_reg</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga_tb/v1/vga_inst/vga_sync_unit/vsync_next" type="logic">
+      <obj_property name="ElementShortName">vsync_next</obj_property>
+      <obj_property name="ObjectShortName">vsync_next</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga_tb/v1/vga_inst/vga_sync_unit/hsync_next" type="logic">
+      <obj_property name="ElementShortName">hsync_next</obj_property>
+      <obj_property name="ObjectShortName">hsync_next</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga_tb/v1/vga_inst/vga_sync_unit/H_DISPLAY" type="array">
+      <obj_property name="ElementShortName">H_DISPLAY[31:0]</obj_property>
+      <obj_property name="ObjectShortName">H_DISPLAY[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga_tb/v1/vga_inst/vga_sync_unit/H_L_BORDER" type="array">
+      <obj_property name="ElementShortName">H_L_BORDER[31:0]</obj_property>
+      <obj_property name="ObjectShortName">H_L_BORDER[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga_tb/v1/vga_inst/vga_sync_unit/H_R_BORDER" type="array">
+      <obj_property name="ElementShortName">H_R_BORDER[31:0]</obj_property>
+      <obj_property name="ObjectShortName">H_R_BORDER[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga_tb/v1/vga_inst/vga_sync_unit/H_RETRACE" type="array">
+      <obj_property name="ElementShortName">H_RETRACE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">H_RETRACE[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga_tb/v1/vga_inst/vga_sync_unit/H_MAX" type="array">
+      <obj_property name="ElementShortName">H_MAX[31:0]</obj_property>
+      <obj_property name="ObjectShortName">H_MAX[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga_tb/v1/vga_inst/vga_sync_unit/START_H_RETRACE" type="array">
+      <obj_property name="ElementShortName">START_H_RETRACE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">START_H_RETRACE[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga_tb/v1/vga_inst/vga_sync_unit/END_H_RETRACE" type="array">
+      <obj_property name="ElementShortName">END_H_RETRACE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">END_H_RETRACE[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga_tb/v1/vga_inst/vga_sync_unit/V_DISPLAY" type="array">
+      <obj_property name="ElementShortName">V_DISPLAY[31:0]</obj_property>
+      <obj_property name="ObjectShortName">V_DISPLAY[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga_tb/v1/vga_inst/vga_sync_unit/V_T_BORDER" type="array">
+      <obj_property name="ElementShortName">V_T_BORDER[31:0]</obj_property>
+      <obj_property name="ObjectShortName">V_T_BORDER[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga_tb/v1/vga_inst/vga_sync_unit/V_B_BORDER" type="array">
+      <obj_property name="ElementShortName">V_B_BORDER[31:0]</obj_property>
+      <obj_property name="ObjectShortName">V_B_BORDER[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga_tb/v1/vga_inst/vga_sync_unit/V_RETRACE" type="array">
+      <obj_property name="ElementShortName">V_RETRACE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">V_RETRACE[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga_tb/v1/vga_inst/vga_sync_unit/V_MAX" type="array">
+      <obj_property name="ElementShortName">V_MAX[31:0]</obj_property>
+      <obj_property name="ObjectShortName">V_MAX[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga_tb/v1/vga_inst/vga_sync_unit/START_V_RETRACE" type="array">
+      <obj_property name="ElementShortName">START_V_RETRACE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">START_V_RETRACE[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga_tb/v1/vga_inst/vga_sync_unit/END_V_RETRACE" type="array">
+      <obj_property name="ElementShortName">END_V_RETRACE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">END_V_RETRACE[31:0]</obj_property>
+   </wvobject>
+</wave_config>

@@ -2,9 +2,9 @@
 <Root MajorVersion="0" MinorVersion="33">
   <CompositeFile CompositeFileTopName="design_1" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1494007217"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1494007217"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1494007217"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1494691593"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1494691593"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1494691593"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\design_1_clk_wiz_0_0\design_1_clk_wiz_0_0.xci" Type="IP">
         <Instance HierarchyPath="clk_wiz_0"/>
@@ -87,6 +87,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\design_1_microblaze_0_axi_periph_0\design_1_microblaze_0_axi_periph_0.xci" Type="IP">
+        <Instance HierarchyPath="microblaze_0_axi_periph"/>
         <Properties IsEditable="false" IsVisible="false" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -124,8 +125,16 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\design_1_axi4_vga_0_0\design_1_axi4_vga_0_0.xci" Type="IP">
+      <File Name="ip\design_1_axi4_vga_0_1\design_1_axi4_vga_0_1.xci" Type="IP">
         <Instance HierarchyPath="axi4_vga_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\design_1_xlslice_0_0\design_1_xlslice_0_0.xci" Type="IP">
+        <Instance HierarchyPath="xlslice_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>

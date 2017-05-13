@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
-| Date         : Sat May 06 01:01:17 2017
+| Date         : Sat May 13 23:07:57 2017
 | Host         : Miichan-Pc running 64-bit major release  (build 9200)
 | Command      : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
 | Design       : design_1_wrapper
@@ -179,6 +179,7 @@ Table of Contents
 +---------------------------------+------+
 |             Ref Name            | Used |
 +---------------------------------+------+
+| design_1_xlslice_0_0            |    1 |
 | design_1_xbar_0                 |    1 |
 | design_1_rst_clk_wiz_0_100M_0   |    1 |
 | design_1_microblaze_0_0         |    1 |
@@ -192,7 +193,7 @@ Table of Contents
 | design_1_axi_uartlite_0_0       |    1 |
 | design_1_axi_bram_ctrl_0_bram_0 |    1 |
 | design_1_axi_bram_ctrl_0_0      |    1 |
-| design_1_axi4_vga_0_0           |    1 |
+| design_1_axi4_vga_0_1           |    1 |
 | design_1_auto_pc_0              |    1 |
 +---------------------------------+------+
 

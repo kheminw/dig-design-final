@@ -1,7 +1,7 @@
 //Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
-//Date        : Sat May 06 01:00:14 2017
+//Date        : Sat May 13 23:06:30 2017
 //Host        : Miichan-Pc running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -9,7 +9,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=20,numReposBlks=15,numNonXlnxBlks=0,numHierBlks=5,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_bram_cntlr_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
+(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=21,numReposBlks=16,numNonXlnxBlks=0,numHierBlks=5,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_bram_cntlr_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
 module design_1
    (Reset,
     USB_Uart_rxd,
@@ -29,6 +29,7 @@ module design_1
   wire Reset_1;
   wire axi4_vga_0_hsync;
   wire [11:0]axi4_vga_0_rgb_out;
+  wire axi4_vga_0_video_s00_axis_tready;
   wire axi4_vga_0_vsync;
   wire [16:0]axi_bram_ctrl_0_BRAM_PORTA_ADDR;
   wire axi_bram_ctrl_0_BRAM_PORTA_CLK;
@@ -51,7 +52,6 @@ module design_1
   wire microblaze_0_Clk;
   wire [31:0]microblaze_0_M0_AXIS_TDATA;
   wire microblaze_0_M0_AXIS_TLAST;
-  wire microblaze_0_M0_AXIS_TREADY;
   wire microblaze_0_M0_AXIS_TVALID;
   wire [31:0]microblaze_0_M_AXI_DP_ARADDR;
   wire [2:0]microblaze_0_M_AXI_DP_ARPROT;
@@ -153,6 +153,7 @@ module design_1
   wire rst_clk_wiz_0_100M_mb_reset;
   wire [0:0]rst_clk_wiz_0_100M_peripheral_aresetn;
   wire sys_clock_1;
+  wire [11:0]xlslice_0_Dout;
 
   assign Reset_1 = Reset;
   assign USB_Uart_txd = axi_uartlite_0_UART_TxD;
@@ -161,14 +162,14 @@ module design_1
   assign rgb_out[11:0] = axi4_vga_0_rgb_out;
   assign sys_clock_1 = sys_clock;
   assign vsync = axi4_vga_0_vsync;
-  design_1_axi4_vga_0_0 axi4_vga_0
+  design_1_axi4_vga_0_1 axi4_vga_0
        (.hsync(axi4_vga_0_hsync),
         .rgb_out(axi4_vga_0_rgb_out),
         .video_s00_axis_aclk(microblaze_0_Clk),
         .video_s00_axis_aresetn(rst_clk_wiz_0_100M_peripheral_aresetn),
-        .video_s00_axis_tdata(microblaze_0_M0_AXIS_TDATA),
+        .video_s00_axis_tdata(xlslice_0_Dout),
         .video_s00_axis_tlast(microblaze_0_M0_AXIS_TLAST),
-        .video_s00_axis_tready(microblaze_0_M0_AXIS_TREADY),
+        .video_s00_axis_tready(axi4_vga_0_video_s00_axis_tready),
         .video_s00_axis_tvalid(microblaze_0_M0_AXIS_TVALID),
         .vsync(axi4_vga_0_vsync));
   (* BMM_INFO_ADDRESS_SPACE = "byte  0xC0000000 32 > design_1 axi_bram_ctrl_0_bram" *) 
@@ -308,7 +309,7 @@ module design_1
         .Interrupt_Address({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .M0_AXIS_TDATA(microblaze_0_M0_AXIS_TDATA),
         .M0_AXIS_TLAST(microblaze_0_M0_AXIS_TLAST),
-        .M0_AXIS_TREADY(microblaze_0_M0_AXIS_TREADY),
+        .M0_AXIS_TREADY(axi4_vga_0_video_s00_axis_tready),
         .M0_AXIS_TVALID(microblaze_0_M0_AXIS_TVALID),
         .M_AXI_DP_ARADDR(microblaze_0_M_AXI_DP_ARADDR),
         .M_AXI_DP_ARPROT(microblaze_0_M_AXI_DP_ARPROT),
@@ -443,6 +444,9 @@ module design_1
         .mb_reset(rst_clk_wiz_0_100M_mb_reset),
         .peripheral_aresetn(rst_clk_wiz_0_100M_peripheral_aresetn),
         .slowest_sync_clk(microblaze_0_Clk));
+  design_1_xlslice_0_0 xlslice_0
+       (.Din(microblaze_0_M0_AXIS_TDATA),
+        .Dout(xlslice_0_Dout));
 endmodule
 
 module design_1_microblaze_0_axi_periph_0
