@@ -1,10 +1,10 @@
 // Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
-// Date        : Sat May 13 23:07:02 2017
+// Date        : Sat May 20 21:11:19 2017
 // Host        : Miichan-Pc running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_axi4_vga_0_1/design_1_axi4_vga_0_1_sim_netlist.v
+//               C:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_axi4_vga_0_1/design_1_axi4_vga_0_1_sim_netlist.v
 // Design      : design_1_axi4_vga_0_1
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -34,24 +34,22 @@ module design_1_axi4_vga_0_1
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 VIDEO_S00_AXIS_CLK CLK, xilinx.com:signal:clock:1.0 video_s00_axis_aclk CLK" *) input video_s00_axis_aclk;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 VIDEO_S00_AXIS_RST RST, xilinx.com:signal:reset:1.0 video_s00_axis_aresetn RST" *) input video_s00_axis_aresetn;
 
-  wire \<const1> ;
   wire hsync;
   wire [11:0]rgb_out;
   wire video_s00_axis_aclk;
   wire video_s00_axis_aresetn;
   wire [11:0]video_s00_axis_tdata;
+  wire video_s00_axis_tready;
   wire video_s00_axis_tvalid;
   wire vsync;
 
-  assign video_s00_axis_tready = \<const1> ;
-  VCC VCC
-       (.P(\<const1> ));
   design_1_axi4_vga_0_1_axi4_vga_v1_0 inst
        (.hsync(hsync),
         .rgb_out(rgb_out),
         .video_s00_axis_aclk(video_s00_axis_aclk),
         .video_s00_axis_aresetn(video_s00_axis_aresetn),
         .video_s00_axis_tdata(video_s00_axis_tdata),
+        .video_s00_axis_tready(video_s00_axis_tready),
         .video_s00_axis_tvalid(video_s00_axis_tvalid),
         .vsync(vsync));
 endmodule
@@ -61,6 +59,7 @@ module design_1_axi4_vga_0_1_axi4_vga_v1_0
    (hsync,
     vsync,
     rgb_out,
+    video_s00_axis_tready,
     video_s00_axis_tdata,
     video_s00_axis_tvalid,
     video_s00_axis_aclk,
@@ -68,6 +67,7 @@ module design_1_axi4_vga_0_1_axi4_vga_v1_0
   output hsync;
   output vsync;
   output [11:0]rgb_out;
+  output video_s00_axis_tready;
   input [11:0]video_s00_axis_tdata;
   input video_s00_axis_tvalid;
   input video_s00_axis_aclk;
@@ -80,6 +80,7 @@ module design_1_axi4_vga_0_1_axi4_vga_v1_0
   wire video_s00_axis_aclk;
   wire video_s00_axis_aresetn;
   wire [11:0]video_s00_axis_tdata;
+  wire video_s00_axis_tready;
   wire video_s00_axis_tvalid;
   wire vsync;
 
@@ -198,6 +199,7 @@ module design_1_axi4_vga_0_1_axi4_vga_v1_0
         .rgb_out(rgb_out),
         .video_s00_axis_aclk(video_s00_axis_aclk),
         .video_s00_axis_aresetn(video_s00_axis_aresetn),
+        .video_s00_axis_tready(video_s00_axis_tready),
         .vsync(vsync));
 endmodule
 
@@ -207,6 +209,7 @@ module design_1_axi4_vga_0_1_vga_sync
     AR,
     vsync,
     rgb_out,
+    video_s00_axis_tready,
     video_s00_axis_aclk,
     video_s00_axis_aresetn,
     Q);
@@ -214,6 +217,7 @@ module design_1_axi4_vga_0_1_vga_sync
   output [0:0]AR;
   output vsync;
   output [11:0]rgb_out;
+  output video_s00_axis_tready;
   input video_s00_axis_aclk;
   input video_s00_axis_aresetn;
   input [11:0]Q;
@@ -278,17 +282,18 @@ module design_1_axi4_vga_0_1_vga_sync
   wire \v_count_reg_reg_n_0_[9] ;
   wire video_s00_axis_aclk;
   wire video_s00_axis_aresetn;
+  wire video_s00_axis_tready;
   wire vsync;
   wire vsync_next;
   wire vsync_reg_i_2_n_0;
 
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \h_count_reg[0]_i_1 
        (.I0(\h_count_reg_reg_n_0_[0] ),
         .O(\h_count_reg[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT5 #(
     .INIT(32'h00FBFB00)) 
     \h_count_reg[1]_i_1 
@@ -325,7 +330,7 @@ module design_1_axi4_vga_0_1_vga_sync
         .I2(\h_count_reg_reg_n_0_[2] ),
         .I3(\h_count_reg_reg_n_0_[3] ),
         .O(\h_count_reg[3]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT5 #(
     .INIT(32'h7FFF8000)) 
     \h_count_reg[4]_i_1 
@@ -387,7 +392,7 @@ module design_1_axi4_vga_0_1_vga_sync
         .I4(\h_count_reg_reg_n_0_[8] ),
         .I5(\h_count_reg[9]_i_3_n_0 ),
         .O(\h_count_reg[9]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT5 #(
     .INIT(32'h7FFFFFFF)) 
     \h_count_reg[9]_i_3 
@@ -649,7 +654,7 @@ module design_1_axi4_vga_0_1_vga_sync
        (.I0(\v_count_reg_reg_n_0_[1] ),
         .I1(\v_count_reg_reg_n_0_[0] ),
         .O(\v_count_reg[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT5 #(
     .INIT(32'h0FF0F0D0)) 
     \v_count_reg[2]_i_1 
@@ -659,7 +664,7 @@ module design_1_axi4_vga_0_1_vga_sync
         .I3(\v_count_reg_reg_n_0_[0] ),
         .I4(\v_count_reg_reg_n_0_[1] ),
         .O(\v_count_reg[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT5 #(
     .INIT(32'h3CC8CCCC)) 
     \v_count_reg[3]_i_1 
@@ -778,7 +783,7 @@ module design_1_axi4_vga_0_1_vga_sync
         .I1(\v_count_reg_reg_n_0_[2] ),
         .I2(\v_count_reg_reg_n_0_[1] ),
         .O(\v_count_reg[9]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT5 #(
     .INIT(32'h80000000)) 
     \v_count_reg[9]_i_5 
@@ -848,7 +853,16 @@ module design_1_axi4_vga_0_1_vga_sync
         .CLR(AR),
         .D(\v_count_reg[9]_i_2_n_0 ),
         .Q(\v_count_reg_reg_n_0_[9] ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  LUT5 #(
+    .INIT(32'h01550000)) 
+    video_s00_axis_tready_INST_0
+       (.I0(\v_count_reg_reg_n_0_[9] ),
+        .I1(\h_count_reg_reg_n_0_[8] ),
+        .I2(\h_count_reg_reg_n_0_[7] ),
+        .I3(\h_count_reg_reg_n_0_[9] ),
+        .I4(\rgb_out[11]_INST_0_i_1_n_0 ),
+        .O(video_s00_axis_tready));
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT5 #(
     .INIT(32'h00000006)) 
     vsync_reg_i_1
@@ -882,6 +896,7 @@ module design_1_axi4_vga_0_1_vga_test
     AR,
     vsync,
     rgb_out,
+    video_s00_axis_tready,
     video_s00_axis_aclk,
     video_s00_axis_aresetn,
     Q);
@@ -889,6 +904,7 @@ module design_1_axi4_vga_0_1_vga_test
   output [0:0]AR;
   output vsync;
   output [11:0]rgb_out;
+  output video_s00_axis_tready;
   input video_s00_axis_aclk;
   input video_s00_axis_aresetn;
   input [11:0]Q;
@@ -900,6 +916,7 @@ module design_1_axi4_vga_0_1_vga_test
   wire [11:0]rgb_reg;
   wire video_s00_axis_aclk;
   wire video_s00_axis_aresetn;
+  wire video_s00_axis_tready;
   wire vsync;
 
   FDCE \rgb_reg_reg[0] 
@@ -981,6 +998,7 @@ module design_1_axi4_vga_0_1_vga_test
         .rgb_out(rgb_out),
         .video_s00_axis_aclk(video_s00_axis_aclk),
         .video_s00_axis_aresetn(video_s00_axis_aresetn),
+        .video_s00_axis_tready(video_s00_axis_tready),
         .vsync(vsync));
 endmodule
 `ifndef GLBL

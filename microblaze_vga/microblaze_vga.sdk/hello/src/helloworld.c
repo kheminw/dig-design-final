@@ -58,9 +58,9 @@ int main()
     int color = 0;
     print("Hello World\n\r");
     while(1){
-    	putfsl(color << 20, 0);
-    	color += 1;
-    	color %= 760;
+    	for(int i = 0; i < 2; i++)putfsl(3840 << 20, 0);
+    	for(int i = 0; i < 2; i++)putfsl(240 << 20, 0);
+    	//putfsl(15 << 20, 0);
     }
 //    for(int i = 0; i < 1024; i++){
 //    	char c = inbyte();

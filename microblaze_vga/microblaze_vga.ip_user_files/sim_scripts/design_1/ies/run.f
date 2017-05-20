@@ -101,9 +101,9 @@
 -makelib ies/xil_defaultlib \
   "../../../bd/design_1/ip/design_1_xbar_0/sim/design_1_xbar_0.v" \
   "../../../bd/design_1/ip/design_1_axi_bram_ctrl_0_bram_0/sim/design_1_axi_bram_ctrl_0_bram_0.v" \
-  "../../../bd/design_1/ipshared/dcdc/hdl/vga_sync.v" \
-  "../../../bd/design_1/ipshared/dcdc/hdl/vga_test.v" \
-  "../../../bd/design_1/ipshared/dcdc/hdl/axi4_vga_v1_0.v" \
+  "../../../bd/design_1/ipshared/cb50/hdl/vga_sync.v" \
+  "../../../bd/design_1/ipshared/cb50/hdl/vga_test.v" \
+  "../../../bd/design_1/ipshared/cb50/hdl/axi4_vga_v1_0.v" \
   "../../../bd/design_1/ip/design_1_axi4_vga_0_1/sim/design_1_axi4_vga_0_1.v" \
   "../../../bd/design_1/ipshared/c49f/xlslice.v" \
   "../../../bd/design_1/ip/design_1_xlslice_0_0/sim/design_1_xlslice_0_0.v" \

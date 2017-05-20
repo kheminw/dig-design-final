@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
-| Date             : Sat May 13 23:09:46 2017
+| Date             : Sun May 21 00:05:05 2017
 | Host             : Miichan-Pc running 64-bit major release  (build 9200)
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
@@ -50,15 +50,15 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.012 |       10 |       --- |             --- |
-| Slice Logic              |     0.003 |     5309 |       --- |             --- |
-|   LUT as Logic           |     0.003 |     2043 |     20800 |            9.82 |
+| Slice Logic              |     0.003 |     5311 |       --- |             --- |
+|   LUT as Logic           |     0.003 |     2045 |     20800 |            9.83 |
 |   LUT as Distributed RAM |    <0.001 |       64 |      9600 |            0.67 |
 |   CARRY4                 |    <0.001 |       63 |      8150 |            0.77 |
 |   Register               |    <0.001 |     1899 |     41600 |            4.56 |
 |   F7/F8 Muxes            |    <0.001 |      117 |     32600 |            0.36 |
 |   LUT as Shift Register  |    <0.001 |       76 |      9600 |            0.79 |
 |   Others                 |    <0.001 |      638 |       --- |             --- |
-| Signals                  |     0.006 |     3779 |       --- |             --- |
+| Signals                  |     0.006 |     3784 |       --- |             --- |
 | Block RAM                |     0.013 |       40 |        50 |           80.00 |
 | MMCM                     |     0.106 |        1 |         5 |           20.00 |
 | DSPs                     |     0.002 |        4 |        90 |            4.44 |
@@ -156,10 +156,10 @@ Table of Contents
 |       inst                                                                                  |    <0.001 |
 |         vga_inst                                                                            |    <0.001 |
 |           vga_sync_unit                                                                     |    <0.001 |
-|     axi_bram_ctrl_0                                                                         |     0.003 |
-|       U0                                                                                    |     0.003 |
-|         gext_inst.abcv4_0_ext_inst                                                          |     0.003 |
-|           GEN_AXI4.I_FULL_AXI                                                               |     0.003 |
+|     axi_bram_ctrl_0                                                                         |     0.002 |
+|       U0                                                                                    |     0.002 |
+|         gext_inst.abcv4_0_ext_inst                                                          |     0.002 |
+|           GEN_AXI4.I_FULL_AXI                                                               |     0.002 |
 |             I_RD_CHNL                                                                       |     0.002 |
 |               I_WRAP_BRST                                                                   |    <0.001 |
 |             I_WR_CHNL                                                                       |    <0.001 |
@@ -472,7 +472,7 @@ Table of Contents
 |                 Gen_Bits[7].MEM_EX_Result_Inst                                              |    <0.001 |
 |                 Gen_Bits[8].MEM_EX_Result_Inst                                              |    <0.001 |
 |                 Gen_Bits[9].MEM_EX_Result_Inst                                              |    <0.001 |
-|               MUL_Unit_I                                                                    |     0.004 |
+|               MUL_Unit_I                                                                    |     0.003 |
 |                 Use_HW_MUL.Using_DSP48_Architectures.Doing_mul64.Virtex_MUL64.dsp_module_I2 |    <0.001 |
 |                   Using_DSP48E1.DSP48E1_I1                                                  |    <0.001 |
 |                 Use_HW_MUL.Using_DSP48_Architectures.Doing_mul64.Virtex_MUL64.dsp_module_I3 |    <0.001 |

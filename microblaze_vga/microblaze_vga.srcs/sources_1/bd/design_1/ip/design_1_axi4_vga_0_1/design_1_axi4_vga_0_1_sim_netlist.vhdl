@@ -1,10 +1,10 @@
 -- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
--- Date        : Sat May 13 23:07:02 2017
+-- Date        : Sat May 20 21:11:19 2017
 -- Host        : Miichan-Pc running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
---               c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_axi4_vga_0_1/design_1_axi4_vga_0_1_sim_netlist.vhdl
+--               C:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_axi4_vga_0_1/design_1_axi4_vga_0_1_sim_netlist.vhdl
 -- Design      : design_1_axi4_vga_0_1
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -20,6 +20,7 @@ entity design_1_axi4_vga_0_1_vga_sync is
     AR : out STD_LOGIC_VECTOR ( 0 to 0 );
     vsync : out STD_LOGIC;
     rgb_out : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    video_s00_axis_tready : out STD_LOGIC;
     video_s00_axis_aclk : in STD_LOGIC;
     video_s00_axis_aresetn : in STD_LOGIC;
     Q : in STD_LOGIC_VECTOR ( 11 downto 0 )
@@ -87,24 +88,24 @@ architecture STRUCTURE of design_1_axi4_vga_0_1_vga_sync is
   signal vsync_next : STD_LOGIC;
   signal vsync_reg_i_2_n_0 : STD_LOGIC;
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \h_count_reg[0]_i_1\ : label is "soft_lutpair0";
-  attribute SOFT_HLUTNM of \h_count_reg[1]_i_1\ : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of \h_count_reg[0]_i_1\ : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of \h_count_reg[1]_i_1\ : label is "soft_lutpair1";
   attribute SOFT_HLUTNM of \h_count_reg[2]_i_2\ : label is "soft_lutpair6";
-  attribute SOFT_HLUTNM of \h_count_reg[4]_i_1\ : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of \h_count_reg[4]_i_1\ : label is "soft_lutpair0";
   attribute SOFT_HLUTNM of \h_count_reg[7]_i_1\ : label is "soft_lutpair6";
-  attribute SOFT_HLUTNM of \h_count_reg[9]_i_3\ : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of \h_count_reg[9]_i_3\ : label is "soft_lutpair0";
   attribute SOFT_HLUTNM of \pixel_reg[0]_i_1\ : label is "soft_lutpair8";
   attribute SOFT_HLUTNM of \pixel_reg[1]_i_1\ : label is "soft_lutpair8";
   attribute SOFT_HLUTNM of \rgb_out[11]_INST_0_i_1\ : label is "soft_lutpair7";
   attribute SOFT_HLUTNM of \v_count_reg[0]_i_1\ : label is "soft_lutpair3";
   attribute SOFT_HLUTNM of \v_count_reg[1]_i_1\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of \v_count_reg[2]_i_1\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \v_count_reg[3]_i_1\ : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of \v_count_reg[2]_i_1\ : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of \v_count_reg[3]_i_1\ : label is "soft_lutpair3";
   attribute SOFT_HLUTNM of \v_count_reg[5]_i_2\ : label is "soft_lutpair4";
   attribute SOFT_HLUTNM of \v_count_reg[8]_i_2\ : label is "soft_lutpair7";
   attribute SOFT_HLUTNM of \v_count_reg[9]_i_4\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \v_count_reg[9]_i_5\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of vsync_reg_i_1 : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of \v_count_reg[9]_i_5\ : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of vsync_reg_i_1 : label is "soft_lutpair2";
 begin
   AR(0) <= \^ar\(0);
 \h_count_reg[0]_i_1\: unisim.vcomponents.LUT1
@@ -843,6 +844,18 @@ hsync_reg_reg: unisim.vcomponents.FDCE
       D => \v_count_reg[9]_i_2_n_0\,
       Q => \v_count_reg_reg_n_0_[9]\
     );
+video_s00_axis_tready_INST_0: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"01550000"
+    )
+        port map (
+      I0 => \v_count_reg_reg_n_0_[9]\,
+      I1 => \h_count_reg_reg_n_0_[8]\,
+      I2 => \h_count_reg_reg_n_0_[7]\,
+      I3 => \h_count_reg_reg_n_0_[9]\,
+      I4 => \rgb_out[11]_INST_0_i_1_n_0\,
+      O => video_s00_axis_tready
+    );
 vsync_reg_i_1: unisim.vcomponents.LUT5
     generic map(
       INIT => X"00000006"
@@ -887,6 +900,7 @@ entity design_1_axi4_vga_0_1_vga_test is
     AR : out STD_LOGIC_VECTOR ( 0 to 0 );
     vsync : out STD_LOGIC;
     rgb_out : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    video_s00_axis_tready : out STD_LOGIC;
     video_s00_axis_aclk : in STD_LOGIC;
     video_s00_axis_aresetn : in STD_LOGIC;
     Q : in STD_LOGIC_VECTOR ( 11 downto 0 )
@@ -1004,6 +1018,7 @@ vga_sync_unit: entity work.design_1_axi4_vga_0_1_vga_sync
       rgb_out(11 downto 0) => rgb_out(11 downto 0),
       video_s00_axis_aclk => video_s00_axis_aclk,
       video_s00_axis_aresetn => video_s00_axis_aresetn,
+      video_s00_axis_tready => video_s00_axis_tready,
       vsync => vsync
     );
 end STRUCTURE;
@@ -1016,6 +1031,7 @@ entity design_1_axi4_vga_0_1_axi4_vga_v1_0 is
     hsync : out STD_LOGIC;
     vsync : out STD_LOGIC;
     rgb_out : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    video_s00_axis_tready : out STD_LOGIC;
     video_s00_axis_tdata : in STD_LOGIC_VECTOR ( 11 downto 0 );
     video_s00_axis_tvalid : in STD_LOGIC;
     video_s00_axis_aclk : in STD_LOGIC;
@@ -1182,6 +1198,7 @@ vga_inst: entity work.design_1_axi4_vga_0_1_vga_test
       rgb_out(11 downto 0) => rgb_out(11 downto 0),
       video_s00_axis_aclk => video_s00_axis_aclk,
       video_s00_axis_aresetn => video_s00_axis_aresetn,
+      video_s00_axis_tready => video_s00_axis_tready,
       vsync => vsync
     );
 end STRUCTURE;
@@ -1212,13 +1229,7 @@ entity design_1_axi4_vga_0_1 is
 end design_1_axi4_vga_0_1;
 
 architecture STRUCTURE of design_1_axi4_vga_0_1 is
-  signal \<const1>\ : STD_LOGIC;
 begin
-  video_s00_axis_tready <= \<const1>\;
-VCC: unisim.vcomponents.VCC
-     port map (
-      P => \<const1>\
-    );
 inst: entity work.design_1_axi4_vga_0_1_axi4_vga_v1_0
      port map (
       hsync => hsync,
@@ -1226,6 +1237,7 @@ inst: entity work.design_1_axi4_vga_0_1_axi4_vga_v1_0
       video_s00_axis_aclk => video_s00_axis_aclk,
       video_s00_axis_aresetn => video_s00_axis_aresetn,
       video_s00_axis_tdata(11 downto 0) => video_s00_axis_tdata(11 downto 0),
+      video_s00_axis_tready => video_s00_axis_tready,
       video_s00_axis_tvalid => video_s00_axis_tvalid,
       vsync => vsync
     );

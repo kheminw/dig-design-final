@@ -3,11 +3,11 @@
 // SW Build 1733598 on Wed Dec 14 22:35:39 MST 2016
 // Vivado v2016.4 (64-bit)
 // Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
-// Created on Saturday May 13, 2017 - 11:06:39 pm, from:
+// Created on Saturday May 20, 2017 - 09:10:57 pm, from:
 //
 //     Map file     - C:\Users\khem_\Desktop\DIG_DESIGN_LAB\final_project\microblaze_vga\microblaze_vga.srcs\sources_1\bd\design_1\design_1.bmm
 //     Data file(s) - c:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/data/mb_bootloop_le.elf
 //
-// Address space 'design_1_i_microblaze_0.design_1_i_axi_bram_ctrl_0_bram_128K_2_ADDR_SPACE', bit lane [31:0].
+// Address space 'design_1_i_microblaze_0.design_1_i_axi_bram_ctrl_0_bram_ADDR_SPACE', bit lane [31:0].
 //
 // Bus width = 32 bits, number of bus blocks = 1.

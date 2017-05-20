@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:user:axi4_vga:1.0
-// IP Revision: 7
+// IP Revision: 8
 
 (* X_CORE_INFO = "axi4_vga_v1_0,Vivado 2016.4" *)
 (* CHECK_LICENSE_TYPE = "design_1_axi4_vga_0_1,axi4_vga_v1_0,{}" *)
-(* CORE_GENERATION_INFO = "design_1_axi4_vga_0_1,axi4_vga_v1_0,{x_ipProduct=Vivado 2016.4,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=axi4_vga,x_ipVersion=1.0,x_ipCoreRevision=7,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_VIDEO_S00_AXIS_TDATA_WIDTH=12}" *)
+(* CORE_GENERATION_INFO = "design_1_axi4_vga_0_1,axi4_vga_v1_0,{x_ipProduct=Vivado 2016.4,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=axi4_vga,x_ipVersion=1.0,x_ipCoreRevision=8,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_VIDEO_S00_AXIS_TDATA_WIDTH=12}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_1_axi4_vga_0_1 (
   hsync,

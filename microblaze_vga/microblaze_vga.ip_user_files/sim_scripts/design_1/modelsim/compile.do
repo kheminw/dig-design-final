@@ -148,9 +148,9 @@ vlog -work axi_crossbar_v2_1_12 -64 -incr "+incdir+../../../../microblaze_vga.sr
 vlog -work xil_defaultlib -64 -incr "+incdir+../../../../microblaze_vga.srcs/sources_1/bd/design_1/ipshared/100a" "+incdir+../../../../microblaze_vga.srcs/sources_1/bd/design_1/ipshared/7e3a/hdl" "+incdir+../../../../microblaze_vga.srcs/sources_1/bd/design_1/ipshared/100a" "+incdir+../../../../microblaze_vga.srcs/sources_1/bd/design_1/ipshared/7e3a/hdl" \
 "../../../bd/design_1/ip/design_1_xbar_0/sim/design_1_xbar_0.v" \
 "../../../bd/design_1/ip/design_1_axi_bram_ctrl_0_bram_0/sim/design_1_axi_bram_ctrl_0_bram_0.v" \
-"../../../bd/design_1/ipshared/dcdc/hdl/vga_sync.v" \
-"../../../bd/design_1/ipshared/dcdc/hdl/vga_test.v" \
-"../../../bd/design_1/ipshared/dcdc/hdl/axi4_vga_v1_0.v" \
+"../../../bd/design_1/ipshared/cb50/hdl/vga_sync.v" \
+"../../../bd/design_1/ipshared/cb50/hdl/vga_test.v" \
+"../../../bd/design_1/ipshared/cb50/hdl/axi4_vga_v1_0.v" \
 "../../../bd/design_1/ip/design_1_axi4_vga_0_1/sim/design_1_axi4_vga_0_1.v" \
 "../../../bd/design_1/ipshared/c49f/xlslice.v" \
 "../../../bd/design_1/ip/design_1_xlslice_0_0/sim/design_1_xlslice_0_0.v" \
