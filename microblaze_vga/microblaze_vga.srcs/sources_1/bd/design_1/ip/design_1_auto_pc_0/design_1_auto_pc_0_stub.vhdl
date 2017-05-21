@@ -1,8 +1,8 @@
 -- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
--- Date        : Sun Apr 30 01:37:33 2017
--- Host        : Miichan-Pc running 64-bit major release  (build 9200)
+-- Date        : Sun May 21 15:57:27 2017
+-- Host        : Lenovo-PC running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub -rename_top design_1_auto_pc_0 -prefix
 --               design_1_auto_pc_0_ design_1_auto_pc_0_stub.vhdl
 -- Design      : design_1_auto_pc_0

@@ -2,11 +2,11 @@
 # Vivado v2016.4 (64-bit)
 # SW Build 1733598 on Wed Dec 14 22:35:39 MST 2016
 # IP Build 1731160 on Wed Dec 14 23:47:21 MST 2016
-# Start of session at: Sun May 21 00:03:02 2017
-# Process ID: 8860
-# Current directory: C:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.runs/synth_1
+# Start of session at: Sun May 21 17:31:55 2017
+# Process ID: 4552
+# Current directory: C:/Users/User/Desktop/final/microblaze_vga/microblaze_vga.runs/synth_1
 # Command line: vivado.exe -log design_1_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
-# Log file: C:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.runs/synth_1/design_1_wrapper.vds
-# Journal file: C:/Users/khem_/Desktop/DIG_DESIGN_LAB/final_project/microblaze_vga/microblaze_vga.runs/synth_1\vivado.jou
+# Log file: C:/Users/User/Desktop/final/microblaze_vga/microblaze_vga.runs/synth_1/design_1_wrapper.vds
+# Journal file: C:/Users/User/Desktop/final/microblaze_vga/microblaze_vga.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source design_1_wrapper.tcl -notrace
